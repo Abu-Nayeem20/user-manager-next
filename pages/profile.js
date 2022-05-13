@@ -1,21 +1,17 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, Flex, Heading, Input, InputGroup, InputRightElement, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/react';
+import { Flex, Menu, MenuButton, MenuItem, MenuList, Stack } from '@chakra-ui/react';
+import React from 'react';
 import Link from 'next/link';
 import NextLink from 'next/link';
-import React, { useState } from 'react';
 import DarkModeSwitch from './components/DarkModeSwitch';
 
-const signup = () => {
-
-    const [show, setShow] = useState(false);
-    const handleClick = () => setShow(!show)
-
+const profile = () => {
     return (
         <Stack
         as="main"
         align="center"
         >
-         <Flex
+            <Flex
           flexDirection="row"
           w="400px"
           pt={4}
@@ -55,46 +51,16 @@ const signup = () => {
                 </NextLink>
                 </MenuItem>
                 <MenuItem>
-                <NextLink href='/signin' passHref>
-                  <Link>Sign In</Link>
-                </NextLink>
-                </MenuItem>
-                <MenuItem>
-                <NextLink href='/signup' passHref>
-                  <Link>Sign Up</Link>
+                <NextLink href='/login' passHref>
+                  <Link>Login</Link>
                 </NextLink>
                 </MenuItem>
               </MenuList>
             </Menu>
 
           </Flex>
-            <Box w="400px" borderWidth='1px' borderRadius='lg' overflow='hidden' p={4} bg="blue.800">
-            <Heading
-            as="h2"
-            size="lg"
-            align="center"
-            color="teal.300"
-            >
-                Sign Up Now!
-            </Heading>
-            <Box>
-            <InputGroup size='md'>
-                <Input
-                    pr='4.5rem'
-                    type={show ? 'text' : 'password'}
-                    placeholder='Enter password'
-                />
-                <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleClick}>
-                    {show ? 'Hide' : 'Show'}
-                    </Button>
-                </InputRightElement>
-                </InputGroup>
-            </Box>
-            </Box>
         </Stack>
-        
     );
 };
 
-export default signup;
+export default profile;

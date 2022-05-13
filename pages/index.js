@@ -1,16 +1,16 @@
-import { ChevronDownIcon, HamburgerIcon, StarIcon } from '@chakra-ui/icons'
-import { Badge, Box, Button, Flex, Heading, Image, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
+import { Box, Flex, Heading, Image, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react'
 import Link from 'next/link'
 import NextLink from 'next/link'
-import styles from '../styles/Home.module.css'
-import DarkModeSwitch from './components/DarkModeSwitch'
+import DarkModeSwitch from './components/DarkModeSwitch';
+
 
 export default function Home() {
   const property = {
     imageUrl: 'https://i.ibb.co/ZmmGzQP/sign-g4ddffbdb3-640.png',
     imageAlt: 'Image'
   }
-  
+
   return (
     <Stack
     as='main'
@@ -56,13 +56,8 @@ export default function Home() {
                 </NextLink>
                 </MenuItem>
                 <MenuItem>
-                <NextLink href='/signin' passHref>
-                  <Link>Sign In</Link>
-                </NextLink>
-                </MenuItem>
-                <MenuItem>
-                <NextLink href='/signup' passHref>
-                  <Link>Sign Up</Link>
+                <NextLink href='/login' passHref>
+                  <Link>Login</Link>
                 </NextLink>
                 </MenuItem>
               </MenuList>
@@ -82,8 +77,8 @@ export default function Home() {
         New here?
       </Heading>
       <Box py={4} textAlign='center'>
-      <NextLink href='/signup' passHref>
-        <Link>Sign Up</Link>
+      <NextLink href='/login' passHref>
+        <Link>Login</Link>
       </NextLink>
       </Box>
     </Box>
